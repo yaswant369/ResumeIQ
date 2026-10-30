@@ -1,9 +1,3 @@
----
-title: ResumeIQ
-sdk: docker
-app_port: 7860
----
-
 # ResumeIQ
 
 ResumeIQ is a lightweight Streamlit prototype for comparing PDF resumes with a job description. It extracts selectable PDF text, ranks resumes using an explainable heuristic, and shows matched skills, skills to strengthen, and candidate improvement suggestions.
@@ -18,16 +12,16 @@ python -m pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Deploy without GitHub
+## Deploy on Streamlit Community Cloud
 
-This project is configured for a Docker-based Hugging Face Space.
+Streamlit Community Cloud deploys directly from GitHub; Docker is not required.
 
-1. Sign in to Hugging Face and create a new Space with the Docker SDK.
-2. Set the Space visibility to Public only if you intend anyone with the URL to access it.
-3. Use the Space's browser-based file upload to add `Dockerfile`, `README.md`, `app.py`, `resume_engine.py`, and `requirements.txt` from this folder. No GitHub account or repository is needed.
-4. Wait for the Space to build, then open its public URL.
+1. Sign in at [share.streamlit.io](https://share.streamlit.io) with the GitHub account that can access this repository.
+2. Select **Create app**, then choose `yaswant369/ResumeIQ`, branch `main`, and main file path `app.py`.
+3. Select **Deploy** and wait for the build to finish.
+4. Open the generated `*.streamlit.app` URL to use the app.
 
-Public hosting sends uploaded resumes to the hosting provider's servers. This prototype has no authentication or access control; use synthetic/demo resumes only unless you first add appropriate access controls, retention limits, and privacy protections.
+The app is public once deployed. Uploaded resumes are processed by the hosting provider, and this prototype has no authentication or access control. Use synthetic/demo resumes only unless you first add appropriate access controls, retention limits, and privacy protections.
 
 ## How scoring works
 
